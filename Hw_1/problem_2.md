@@ -1,4 +1,4 @@
-##This shows that the Producer and Consumer are synchronized through channels and goroutines.  
+This shows that the Producer and Consumer are synchronized through channels and goroutines.  
 
 ---
 
