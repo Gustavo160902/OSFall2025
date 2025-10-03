@@ -1,5 +1,5 @@
 ## Lock Analysis
-After changing the unlock function from `lock->flag = 0;` to `lock->flag = lock->flag - 1;`.
+# After changing the unlock function from `lock->flag = 0;` to `lock->flag = lock->flag - 1;`.
 
 The new algorithm will not be correct, because the flag can go negative if the lock is not used properly. 
 For example, if a thread calls `unlock()` without holding the lock, or calls it more than once, the 
