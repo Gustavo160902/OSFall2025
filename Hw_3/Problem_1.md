@@ -32,12 +32,8 @@ Why reliable: official Go documentation
 
 ### Links  
 
-https://go.dev/blog/codelab-share  
-
-
-
+https://go.dev/blog/codelab-share   
+https://www.digitalocean.com/community/tutorials/understanding-concurrency-in-go
+       
 AI Disclosure  
 AI assistance was used only to help locate reliable Go documentation and to format the citations and sources clearly. Expalnations were based on our own understanding.
-
-
-https://www.digitalocean.com/community/tutorials/understanding-concurrency-in-go
