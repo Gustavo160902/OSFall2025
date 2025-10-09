@@ -40,4 +40,7 @@ Difference: We rely on an actual scheduler library to test systematic fairness a
     
 Wokwi Simulator. (2024). TaskScheduler example [Software simulation]. Wokwi. https://wokwi.com/projects/307248583887815233 
 Demonstrates the TaskScheduler library running inside an online simulator.    
-Difference: We run equivalent experiments on real Arduino hardware to collect physical timing data. 
+Difference: We run equivalent experiments on real Arduino hardware to collect physical timing data.    
+   
+OS class book cap 7   
+https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf
