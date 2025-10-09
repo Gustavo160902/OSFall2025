@@ -6,6 +6,6 @@ Run the code
 ## Analysis:
 The simple concurrent list is better than the hand-over-hand method, unless there is more than 99% insert, where there is a chance that hand-over-hand has better times, as hand-over-hand has many locks that seem to add over time.
 ### Dependencies/library:
-fmt
-sync
+fmt   
+sync   
 time
