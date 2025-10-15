@@ -1,6 +1,7 @@
 ### Software:  
 Arduino IDE
-Visual Studio Code  
+Visual Studio Code     
+ATMega328P(Arduino Uno)
 
 
 
