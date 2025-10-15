@@ -1,7 +1,6 @@
 ### Software:  
 Arduino IDE
 Visual Studio Code     
-ATMega328P(Arduino Uno)
 
 
 
@@ -10,4 +9,5 @@ Arduino board
 LEDs  
 Wires   
 Breadboard   
-Sensors
+Sensors    
+ATMega328P(Arduino Uno)
