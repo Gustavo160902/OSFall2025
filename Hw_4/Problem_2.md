@@ -2,12 +2,6 @@
 
 For this problem, I created two versions of a concurrent queue in Go.
 
-### How to Run
-
-Save the file as `main.go` in your Go workspace.  
-Open a terminal in that folder and run:
-
-
 The first one is a **Two-Lock Queue** that uses two normal sync.Mutex locks: one for adding items and one for removing items.  
 The second one is a **Lock-Free Queue** that uses atomic operations from Go’s sync/atomic package so it can work without locks.
 
@@ -23,6 +17,11 @@ When there are many threads running, the Lock-Free version usually performs bett
 ### Consistency with reference
 My result matches what Michael and Scott explained in his documentation.  
 The two-lock queue is good under light load, and the lock-free version scales better under heavy contention because it avoids blocking.
+
+### How to Run
+
+Save the file as `main.go` in your Go workspace.  
+Open a terminal in that folder and run    
 
 ### Sources
 - My own Go code using standard packages:  
