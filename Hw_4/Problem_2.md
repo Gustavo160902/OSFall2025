@@ -2,6 +2,12 @@
 
 For this problem, I created two versions of a concurrent queue in Go.
 
+### How to Run
+
+Save the file as `main.go` in your Go workspace.  
+Open a terminal in that folder and run:
+
+
 The first one is a **Two-Lock Queue** that uses two normal sync.Mutex locks: one for adding items and one for removing items.  
 The second one is a **Lock-Free Queue** that uses atomic operations from Go’s sync/atomic package so it can work without locks.
 
