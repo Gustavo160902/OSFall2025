@@ -1,0 +1,53 @@
+Question 1: 
+
+Copy-on-Write, COW, is a technique that allows parent processes and child processes to access the same pages in memory at the same time until a process tries to write in one of the shared pages. Once a process tries to write on one of the pages, it will copy that page elsewhere in memory and become the only one with access to that page. It will also move its pointer to the copied page so that it will not affect the original page that the other process is accessing. 
+
+COW improves latency for forking since it does not need to copy all the pages from the parent to the child during the fork(). Only when the page is modified does the process need to copy the page. 
+
+Question 2: 
+function cow_fork(parent): 
+    child = create_process() 
+    if child == NULL: 
+        return ERROR 
+
+    for each page in parent.page_table: 
+        if page is valid: 
+            child.page_table[page] = parent.page_table[page] 
+            set_read_only(parent.page_table[page]) 
+            set_read_only(child.page_table[page]) 
+            increment_refcount(page)
+
+    copy_state(parent, child) 
+    return child.pid 
+
+ 
+
+function write_page(proc, addr, type): 
+    if type == WRITE: 
+        page = get_page(proc, addr) 
+
+        if refcount(page) > 1: 
+            new_page = allocate_page() 
+            copy(new_page, page) 
+            decrement_refcount(page) 
+
+            if refcount(page) == 0: 
+                free_physical_page(page) 
+
+           #Update the pointer to the new page, and make it writable
+            update_page(proc, addr, new_page, writable=True) 
+        else: 
+            #if the page only has one reference, set it to writable
+            set_writable(proc.page_table[addr]) 
+
+ 
+
+function cleanup(proc): 
+    for each page in proc.page_table: 
+        if page is valid: 
+            decrement_refcount(page) 
+            if refcount(page) == 0: 
+                free_physical_page(page) 
+
+    #Free the virtual page table
+    free_page_table(proc.page_table)
